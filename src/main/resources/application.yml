@@ -1,1 +1,6 @@
-
+spring:
+  datasource: # Ip do container
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://172.17.0.2:3306/vollmed_api
+    username: root
+    password: root
