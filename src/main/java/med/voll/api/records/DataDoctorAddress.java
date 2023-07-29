@@ -1,9 +1,9 @@
-package med.voll.api.registy;
+package med.voll.api.records;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;
 
-public record DataAddressDoctor(
+public record DataDoctorAddress(
 
         @NotBlank(message = "LOGRADOURO é obrigatório")
         String logradouro,

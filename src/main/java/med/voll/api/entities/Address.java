@@ -3,7 +3,7 @@ package med.voll.api.entities;
 
 import jakarta.persistence.Embeddable;
 import lombok.*;
-import med.voll.api.registy.DataAddressDoctor;
+import med.voll.api.records.DataDoctorAddress;
 
 
 @Embeddable
@@ -20,7 +20,7 @@ public class Address {
     private String cidade;
     private String uf;
 
-    public Address(DataAddressDoctor address) {
+    public Address(DataDoctorAddress address) {
         this.logradouro = address.logradouro();
         this.bairro = address.bairro();
         this.cep = address.cep();
@@ -29,4 +29,28 @@ public class Address {
         this.numero = address.numero();
         this.complemento = address.complemento();
     }
+    public void updateInformationAddress(DataDoctorAddress dados) {
+        if (dados.logradouro() != null) {
+            this.logradouro = dados.logradouro();
+        }
+        if (dados.bairro() != null) {
+            this.bairro = dados.bairro();
+        }
+        if (dados.cep() != null) {
+            this.cep = dados.cep();
+        }
+        if (dados.cidade() != null) {
+            this.cidade = dados.cidade();
+        }
+        if (dados.uf() != null) {
+            this.uf = dados.uf();
+        }
+        if (dados.numero() != null) {
+            this.numero = dados.numero();
+        }
+        if (dados.complemento() != null) {
+            this.complemento = dados.complemento();
+        }
+    }
+
 }
